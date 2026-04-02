@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Instituto Esquerdinha</title>
+</head>
+<body>
+    <div class="container-botoes">
+        <a href="https://www.facebook.com/institutojoaomarcioemiliano/?locale=pt_BR" target="_blank">
+            <button class="botao-1">Facebook</button>
+        </a>
+        <a href="https://www.instagram.com/..." target="_blank">
+            <button class="botao-2">Instagram</button>
+        </a>
+    </div>
+
+    <main class="centralizar">
+        <h1 class="h1">MELHOR BASE DO BRASIL</h1>
+        
+        <div class="girar">
+            <img src="transferir.jfif" alt="esquerdinha">
+        </div>
+
+        <p class="texto-principal">Venha fazer um teste no Esquerdinha!</p>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+    <script>
+        const tl = gsap.timeline();
+
+        tl.from(".h1", {
+            y: -50,
+            opacity: 0,
+            duration: 1,
+            ease: "back.out(1.7)"
+        })
+        .from(".texto-principal", { 
+            y: 30,
+            opacity: 0,
+            duration: 1,
+            ease: "power2.out"
+        }, "-=0.5");
+
+        gsap.to(".girar", {
+            rotationY: 360,
+            duration: 3,
+            repeat: -1, 
+            ease: "none"
+        });
+
+        gsap.to(".botao-1, .botao-2", {
+            scale: 1.1,
+            duration: 1,
+            repeat: -1,
+            yoyo: true,
+            ease: "sine.inOut",
+            stagger: 0.2 
+        });
+
+        gsap.from(".container-botoes", {
+            x: -100,          
+            opacity: 0,
+            duration: 1,
+            ease: "power3.out",
+            delay: 1.5
+        });
+
+        gsap.to(".texto-principal", {
+            duration: 0.1, 
+            repeat: -1, 
+            yoyo: true, 
+            ease: "none",
+            skewX: "2deg", 
+            textShadow: "0 0 10px #ff00ff, 0 0 20px #ff00ff", 
+            modifiers: {
+                textShadow: (value) => Math.random() > 0.9 ? "none" : value
+            }
+        });
+    </script>
+</body>
+</html>

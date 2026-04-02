@@ -1,0 +1,70 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;       
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+.centralizar {
+    display: flex;
+    flex-direction: column;  
+    align-items: center;    
+    text-align: center;
+    z-index: 1;
+}
+
+.h1 {
+    font-size: clamp(2rem, 8vw, 4rem); 
+    margin: 0 0 20px 0; 
+    text-transform: uppercase;
+}
+
+.girar img {
+    max-width: 250px; 
+    height: auto;
+    border-radius: 50%;
+}
+
+.texto-principal {
+    font-size: 1.8rem; 
+    font-weight: bold;
+    margin-top: 30px;
+    color: #ff4500;
+}
+
+.container-botoes {
+    position: fixed;  
+    bottom: 20px;      
+    left: 20px;        
+    display: flex;
+    flex-direction: column; 
+    gap: 12px;         
+    z-index: 1000;    
+}
+
+.botao-1, .botao-2 {
+    padding: 12px 25px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.botao-1 {
+    background: #2563eb;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+}
+
+.botao-2 {
+    background: #e78617;
+    box-shadow: 0 0 15px rgba(231, 134, 23, 0.6);
+}
